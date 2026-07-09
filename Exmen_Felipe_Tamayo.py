@@ -30,7 +30,7 @@ def busqueda_precio(p_min, p_max):
 
 def eliminar_juego(codigo):
     for codigo in listadelcodigo:
-        if codigo == el de la lista
+        if codigo == #el de la lista:
             inventario.pop(codigo)
             juegos.pop(codigo)
         else:
@@ -41,10 +41,16 @@ def agregar_juego(codigo, titulo, plataforma, genero, clasificacion, multiplayer
 def buscar_codigo(codigo):
     for codigo in inventario:
         if codigo == inventario["codigo"]:
-
+            return True
+        else:
+            return False
 
 def actualizar_precio(codigo, nuevo_precio):
-
+    actualizarCodigo = buscar_codigo(codigo, nuevo_precio)
+    if actualizarCodigo == True:
+        #aquí se inserta el comando que actualiza los precios
+    else:
+        return False
 
 def validar_codigo(codigo):
     if codigo.strip()=="":
@@ -132,11 +138,12 @@ while True:
                 codigo = (input("Ingrese el código del juego"))
                 nuevo_precio = int(input("Ingrese el nuevo precio del juego: "))
 
-                if codigo == 4:
-                    print("")
+                actualizar = actualizar_precio(codigo, nuevo_precio)
 
+                if actualizar == True:
+                    print("Precio actualizado con éxito")
                 else:
-                    print("El código ingresdo no existe")
+                    print("El código no existe")
             except ValueError:
                 print("ingrese caracteres válidos")
 
@@ -166,7 +173,7 @@ while True:
         if codigoValidado == True and tituloValidado == True and plataformaValidado == True and generoValidado == True and clasificacionValidado == True and multiplayerValidado == True and editorValidado == True and precioValidado == True and stockValidado == True:
         
             juego = {
-                "codigo": [codigo, titulo, plataforma, genero, clasificacion, multiplayer, editor,
+                "codigo": [codigo, titulo, plataforma, genero, clasificacion, multiplayer, editor,]
             }
 
             inventario = {
